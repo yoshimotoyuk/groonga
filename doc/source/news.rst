@@ -5,6 +5,42 @@
 News
 ====
 
+.. _release-11-1-1:
+
+Release 11.1.1 - 2021-12-29
+---------------------------
+
+Improvements
+------------
+
+* [:doc:`reference/commands/select`] Added support for near phrease product search.
+
+  This feature is a short cut of the follow ``'*NP"..." OR *NP"..." OR ...'``.
+
+  .. code-block::
+
+     *NP"a 1 x" OR
+     *NP"a 1 y" OR
+     *NP"a 1 z" OR
+     *NP"a 2 x" OR
+     *NP"a 2 y" OR
+     *NP"a 2 z" OR
+     *NP"a 3 x" OR
+     *NP"a 3 y" OR
+     *NP"a 3 z" OR
+     *NP"b 1 x" OR
+     *NP"b 1 y" OR
+     *NP"b 1 z" OR
+     *NP"b 2 x" OR
+     *NP"b 2 y" OR
+     *NP"b 2 z" OR
+     *NP"b 3 x" OR
+     *NP"b 3 y" OR
+     *NP"b 3 z"
+
+  We can be written as ``*NPP"(a b) (1 2 3) (x y z)"`` the above expression by this feature.
+  We implements this feature for improving performance near phrease search like ``'*NP"..." OR *NP"..." OR ...'``.
+
 .. _release-11-1-0:
 
 Release 11.1.0 - 2021-11-29
