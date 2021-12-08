@@ -41,6 +41,34 @@ Improvements
   We can be written as ``*NPP"(a b) (1 2 3) (x y z)"`` the above expression by this feature.
   We implements this feature for improving performance near phrease search like ``'*NP"..." OR *NP"..." OR ...'``.
 
+* [:doc:`reference/commands/select`] Added support for order near phrease product search.
+
+  This feature is a short cut of the follow ``'*ONP"..." OR *ONP"..." OR ...'``.
+
+  .. code-block::
+
+     *ONP"a 1 x" OR
+     *ONP"a 1 y" OR
+     *ONP"a 1 z" OR
+     *ONP"a 2 x" OR
+     *ONP"a 2 y" OR
+     *ONP"a 2 z" OR
+     *ONP"a 3 x" OR
+     *ONP"a 3 y" OR
+     *ONP"a 3 z" OR
+     *ONP"b 1 x" OR
+     *ONP"b 1 y" OR
+     *ONP"b 1 z" OR
+     *ONP"b 2 x" OR
+     *ONP"b 2 y" OR
+     *ONP"b 2 z" OR
+     *ONP"b 3 x" OR
+     *ONP"b 3 y" OR
+     *ONP"b 3 z"
+
+  We can be written as ``*ONPP"(a b) (1 2 3) (x y z)"`` the above expression by this feature.
+  We implements this feature for improving performance near phrease search like ``'*ONP"..." OR *ONP"..." OR ...'``.
+
 .. _release-11-1-0:
 
 Release 11.1.0 - 2021-11-29
