@@ -13,9 +13,9 @@ Release 11.1.1 - 2021-12-29
 Improvements
 ------------
 
-* [:doc:`reference/commands/select`] Added support for near phrease product search.
+* [:doc:`reference/commands/select`] Added support for near phrase product search.
 
-  This feature is a short cut of the follow ``'*NP"..." OR *NP"..." OR ...'``.
+  This feature is a short cut of ``'*NP"..." OR *NP"..." OR ...'``.
 
   .. code-block::
 
@@ -39,11 +39,11 @@ Improvements
      *NP"b 3 z"
 
   We can be written as ``*NPP"(a b) (1 2 3) (x y z)"`` the above expression by this feature.
-  We implements this feature for improving performance near phrease search like ``'*NP"..." OR *NP"..." OR ...'``.
+  We implements this feature for improving performance near phrase search like ``'*NP"..." OR *NP"..." OR ...'``.
 
-* [:doc:`reference/commands/select`] Added support for order near phrease product search.
+* [:doc:`reference/commands/select`] Added support for order near phrase product search.
 
-  This feature is a short cut of the follow ``'*ONP"..." OR *ONP"..." OR ...'``.
+  This feature is a short cut of ``'*ONP"..." OR *ONP"..." OR ...'``.
 
   .. code-block::
 
@@ -67,7 +67,7 @@ Improvements
      *ONP"b 3 z"
 
   We can be written as ``*ONPP"(a b) (1 2 3) (x y z)"`` the above expression by this feature.
-  We implements this feature for improving performance near phrease search like ``'*ONP"..." OR *ONP"..." OR ...'``.
+  We implements this feature for improving performance near phrase search like ``'*ONP"..." OR *ONP"..." OR ...'``.
 
 .. _release-11-1-0:
 
