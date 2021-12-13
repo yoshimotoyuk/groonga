@@ -69,6 +69,30 @@ Improvements
   We can be written as ``*ONPP"(a b) (1 2 3) (x y z)"`` the above expression by this feature.
   We implements this feature for improving performance near phrase search like ``'*ONP"..." OR *ONP"..." OR ...'``.
 
+Fixes
+-----
+
+* Fixed a bug that we can't remove a index column with invalid parameter. [GitHub#1301][Patched by Takashi Hashida]
+
+  * For example, we can't remove a table when we create an invalid index column with ``column_create`` as below.
+
+    .. code-block::
+
+       table_create Statuses TABLE_NO_KEY
+       column_create Statuses start_time COLUMN_SCALAR UInt16
+       column_create Statuses end_time COLUMN_SCALAR UInt16
+
+       table_create Times TABLE_PAT_KEY UInt16
+       column_create Times statuses COLUMN_INDEX Statuses start_time,end_time
+       # [[-22,1639037503.16114,0.003981828689575195,"grn_obj_set_info(): GRN_INFO_SOURCE: multi column index must be created with WITH_SECTION flag: <Times.statuses>",[["grn_obj_set_info_source_validate","../../groonga/lib/db.c",9605],["/tmp/d.grn",6,"column_create Times statuses COLUMN_INDEX Statuses start_time,end_time"]]],false]
+       table_remove Times
+       # [[-22,1639037503.16515,0.0005414485931396484,"[object][remove] column is broken: <Times.statuses>",[["remove_columns","../../groonga/lib/db.c",10649],["/tmp/d.grn",8,"table_remove Times"]]],false]
+
+Thanks
+------
+
+* Takashi Hashida
+
 .. _release-11-1-0:
 
 Release 11.1.0 - 2021-11-29
