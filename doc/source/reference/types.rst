@@ -144,22 +144,22 @@ String of 2,147,483,647 or less bytes. (default: "")
 ``TokyoGeoPoint``
 ^^^^^^^^^^^^^^^^^
 
-旧日本測地系による経緯度であり、経度と緯度をミリ秒単位で表現した整数の組により表現します。（デフォルト値: 0x0）
+Represent longitude and latitude by set of integer representing in millisecond. The longtitude and latitude of TokyoGeoPoint are based on old Japanese Geodetic datum. (default: "0x0") 
+Longititude and latitude displayed as X degree Y minutes Z second will be converted to millisecond unit with following caliculation (((X * 60) + Y) * 60 + Z) * 1000.
 
-度分秒形式でx度y分z秒となる経度・緯度は、(((x * 60) + y) * 60 + z) * 1000という計算式でミリ秒単位へと変換されます。
+Use text string ``Longitude in millisecond unit x Latitude in milliscond unit`` or ``Latitude in a decimal x Longititude in a decimal`` to store value with :doc:`/reference/commands/load` command.``x`` and``,`` would be used as separator for longitude and latitude. 
 
-:doc:`/reference/commands/load` コマンドで値を格納するときは、"ミリ秒単位の経度xミリ秒単位の緯度" もしくは "経度の小数表記x緯度の小数表記" という文字列表現を使って指定します。経度と緯度の区切りとしては、'x' のほかに ',' を使うことができます。
 
-測地系の詳細については、 `測地系 - Wikipedia <http://ja.wikipedia.org/wiki/%E6%B8%AC%E5%9C%B0%E7%B3%BB>`_ を参照してください。
+For more details about Geodatic datum, refer to `Geodatic datum - Wikipedia <https://en.wikipedia.org/wiki/Geodetic_datum>`
 
 .. _builtin-type-wgs84-geo-point:
 
 ``WGS84GeoPoint``
 ^^^^^^^^^^^^^^^^^
 
-世界測地系（World Geodetic System, WGS 84）による経緯度であり、経度と緯度をミリ秒単位で表現した整数の組により表現します。（デフォルト値: 0x0）
+Longtitude and latitude based on World Geodetic System, WGS 84. Longtitudeand latitude are displayed by set unit of integer representing millisecond. (default: "0x0") 
 
-度分秒形式からミリ秒形式への変換方法や :doc:`/reference/commands/load` コマンドにおける指定方法はTokyoGeoPointと同じです。
+Conversion method into millisecond and command methods of :doc:`/reference/commands/load` are same as TokyoGeoPoint. 
 
 Limitations about types
 -----------------------
